@@ -1,31 +1,303 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* General Styles */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+#h2{
+    font-weight: bold;
+    color:#2980b9;
 }
-
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664'); /* Add a background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .hidden {
     display: none;
 }
-
-#role-selection button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+#app {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Role Selection Section */
+#role-selection {
+    text-align: center;
+    padding: 20px;
+}
+
+#role-selection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#role-selection button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#role-selection button:hover {
+    background-color: #2980b9;
+}
+
+/* Login Form */
 #login-form {
-    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 #login-form input {
-    display: block;
-    margin: 10px auto;
+    width: 80%;
     padding: 10px;
-    width: 200px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 #login-form button {
-    margin: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+    background-color: #219653;
+}
+
+/* Dashboards */
+#admin-dashboard,
+#teacher-dashboard,
+#student-dashboard {
+    max-width: 1000px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#admin-dashboard h2,
+#teacher-dashboard h2,
+#student-dashboard h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#admin-dashboard button,
+#teacher-dashboard button,
+#student-dashboard button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#admin-dashboard button:hover,
+#teacher-dashboard button:hover,
+#student-dashboard button:hover {
+    background-color: #d35400;
+}
+
+/* Quiz Creation Form */
+#quiz-creation-form {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#quiz-creation-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#quiz-creation-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#quiz-creation-form button {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#quiz-creation-form button:hover {
+    background-color: #8e44ad;
+}
+
+/* Quizzes List */
+#quizzes-list {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#quizzes-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#quizzes-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#quizzes-list li {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+/* Quiz Attempt Section */
+#quiz-attempt {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#quiz-attempt h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#quiz-attempt button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#quiz-attempt button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #app {
+        padding: 10px;
+    }
+
+    #role-selection button,
+    #login-form button,
+    #admin-dashboard button,
+    #teacher-dashboard button,
+    #student-dashboard button,
+    #quiz-creation-form button,
+    #quiz-attempt button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+/* User List Section */
+#user-list {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#user-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#user-list li {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+#back-to-dashboard-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-dashboard-btn:hover {
+    background-color: #2980b9;
 }
