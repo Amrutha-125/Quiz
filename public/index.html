@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Role Selection Buttons -->
+        <div id="role-selection">
+            <h2>Select Your Role</h2>
+            <button onclick="showLoginForm('admin')">Admin</button>
+            <button onclick="showLoginForm('teacher')">Teacher</button>
+            <button onclick="showLoginForm('student')">Student</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="hidden">
+            <h2 id="login-title">Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="goBackToRoleSelection()">Back</button>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="hidden">
+            <h2>Admin Dashboard</h2>
+            <button id="view-users-btn">View Users</button>
+            <button id="add-user-btn">Add User</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <!-- Teacher Dashboard -->
+        <!-- Teacher Dashboard -->
+<div id="teacher-dashboard" class="hidden">
+    <h2>Teacher Dashboard</h2>
+    <button id="create-quiz-btn">Create Quiz</button>
+    <button id="view-scores-btn">View Scores</button>
+    <button id="logout-btn">Logout</button>
+</div>
+
+<!-- Quiz Creation Form -->
+<div id="quiz-creation-form" class="hidden">
+    <h3>Create Quiz</h3>
+    <input type="text" id="quiz-title" placeholder="Quiz Title">
+    <input type="datetime-local" id="quiz-start-date" placeholder="Start Date">
+    <input type="datetime-local" id="quiz-end-date" placeholder="End Date">
+
+    <div id="questions-container">
+        <!-- Questions will be dynamically added here -->
+    </div>
+
+    <button id="add-question-btn">Add Question</button>
+    <button id="submit-quiz-btn">Submit Quiz</button>
+</div>
+
+        <!-- Student Dashboard -->
+        <!-- Student Dashboard -->
+<div id="student-dashboard" class="hidden">
+    <h2>Student Dashboard</h2>
+    <button id="view-quizzes-btn">View Quizzes</button>
+    <button id="logout-btn">Logout</button>
+
+    <!-- Quizzes List -->
+    <div id="quizzes-list" class="hidden">
+        <h3>Available Quizzes</h3>
+        <ul id="quizzes"></ul>
+    </div>
+</div>
+
+        <!-- Quiz Attempt Section -->
+        <div id="quiz-attempt" class="hidden">
+            <h2 id="quiz-title"></h2>
+            
+            <div id="questions"></div>
+            <button onclick="submitQuizAttempt()">Submit Quiz</button>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
