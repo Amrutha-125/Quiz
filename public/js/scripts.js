@@ -86,6 +86,7 @@ function logout() {
 }
 
 // Function to view all users
+// Function to view all users
 async function viewUsers() {
     try {
         const response = await fetch('/admin/users');
@@ -94,18 +95,36 @@ async function viewUsers() {
 
         // Display users in the UI
         const userList = users.map(user => `
-            <div>
+            <li>
                 <p>ID: ${user.id}, Username: ${user.username}, Role: ${user.role}</p>
-            </div>
+            </li>
         `).join('');
 
-        document.getElementById('admin-dashboard').innerHTML = userList; // Clear previous content and display new list
+        document.getElementById('users').innerHTML = userList;
+
+        // Hide the Admin Dashboard buttons and show the user list
+        document.getElementById('view-users-btn').classList.add('hidden');
+        document.getElementById('add-user-btn').classList.add('hidden');
+        document.getElementById('logout-btn').classList.add('hidden');
+        document.getElementById('user-list').classList.remove('hidden'); // Show user list
     } catch (error) {
         console.error('Error fetching users:', error);
         alert('Failed to fetch users');
     }
 }
 
+// Function to go back to the Admin Dashboard
+function goBackToDashboard() {
+    // Hide the user list and show the Admin Dashboard buttons
+    document.getElementById('user-list').classList.add('hidden');
+    document.getElementById('view-users-btn').classList.remove('hidden');
+    document.getElementById('add-user-btn').classList.remove('hidden');
+    document.getElementById('logout-btn').classList.remove('hidden');
+}
+
+// Attach event listeners
+document.getElementById('view-users-btn').addEventListener('click', viewUsers);
+document.getElementById('back-to-dashboard-btn').addEventListener('click', goBackToDashboard);
 // Function to add a new user
 async function addUser() {
     const username = prompt('Enter username:');
